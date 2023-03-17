@@ -18,7 +18,7 @@ class NotesController extends Controller
         $notes->content  = $request->isi;
         $notes->save();
 
-        return redirect()->route('notes')->with('success','Data berhasil ditambahkan');
+        return redirect()->route('notes')->with('success','Notes have been added');
     }
 
     public function notes_update(Request $request){
@@ -27,12 +27,12 @@ class NotesController extends Controller
         $notes->content  = $request->isi;
         $notes->save();
 
-        return redirect()->route('notes')->with('success','Data berhasil diupdate');
+        return redirect()->route('notes')->with('success','Notes have been updated');
     }
 
     public function notes_delete($id){
         $notes = Notes::find($id);
         $notes->delete();
-        return redirect()->route('notes')->with('success','Data berhasil dihapus');
+        return redirect()->route('notes')->with('success','Notes have been deleted');
     }
 }

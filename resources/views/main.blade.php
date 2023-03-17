@@ -9,7 +9,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
             <div class="form-floating mt-5">
               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Cari Catatan...</label>
+              <label for="floatingInput">Search a Notes...</label>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@
                       {{ $row->content }}
                     </p>
                     <div class="btn-group w-100" role="group" aria-label="Basic example">
-                      <button type="button" data-bs-toggle="modal" data-bs-target="#edit{{ $row->id }}" class="btn btn-light"><i class="bi bi-pencil"></i> Edit</button>
-                      <button type="button" id="/notes_delete/{{ $row->id }}" class="btn btn-secondary btn-del"><i class="bi bi-trash"></i> Hapus</button>
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#edit{{ $row->id }}" class="btn btn-light"><i class="bi bi-pencil"></i> Change</button>
+                      <button type="button" id="/notes_delete/{{ $row->id }}" class="btn btn-secondary btn-del"><i class="bi bi-trash"></i> Delete</button>
                     </div>
                   </div>
                 </div>
@@ -51,15 +51,15 @@
                         <input type="hidden" name="id" value="{{ $row->id }}">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="floatingInput" name="judul" value="{{ $row->title }}" placeholder="name@example.com">
-                          <label for="floatingInput">Judul</label>
+                          <label for="floatingInput">Title</label>
                         </div>
                         <div class="form-floating mb-3">
                           <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px">{{ $row->content }}</textarea>
-                          <label for="floatingTextarea2">Isi</label>
+                          <label for="floatingTextarea2">Content</label>
                         </div>
                         <div class="text-center mt-3">
                           <button type="button" class="btn btn-light w-25" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-dark w-25">Simpan</button>
+                          <button type="submit" class="btn btn-dark w-25">Save</button>
                         </div>
                       </form>
                     </div>
@@ -85,15 +85,15 @@
               @csrf
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="judul" placeholder="name@example.com">
-                <label for="floatingInput">Judul</label>
+                <label for="floatingInput">Title</label>
               </div>
               <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px"></textarea>
-                <label for="floatingTextarea2">Isi</label>
+                <label for="floatingTextarea2">Content</label>
               </div>
               <div class="text-center mt-3">
                 <button type="button" class="btn btn-light w-25" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-dark w-25">Simpan</button>
+                <button type="submit" class="btn btn-dark w-25">Save</button>
               </div>
             </form>
           </div>

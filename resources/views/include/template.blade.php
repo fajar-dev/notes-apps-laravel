@@ -17,6 +17,22 @@
 
   @yield('content')
 
+  @if (session('success'))
+    <div class="toast-container position-fixed top-0 end-0 p-3 " >
+      <div id="liveToast" class="toast show border border-2 border-dark" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header border-bottom border-2 border-dark bg-secondary text-light">
+          <i class="bi bi-bell-fill"></i> 
+          <strong class="me-auto ms-2">Notification</strong>
+          <small>Now</small>
+          <button type="button" class="btn-close bg-light p-2" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          {{ session('success') }}
+        </div>
+      </div>
+    </div>
+  @endif
+
   <script type="text/javascript">
     $(document).ready(function() {
         $('body').on("click", ".btn-del", function() {
@@ -45,5 +61,12 @@
   </div>
 
   <script src="js/bootstrap.bundle.min.js" ></script>
+  <script>
+
+    setTimeout(function () {
+      $("#liveToast").removeClass("show");
+    }, 3000);
+
+  </script>
   </body>
 </html>
