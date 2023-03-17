@@ -1,0 +1,42 @@
+@import url(//db.onlinewebfonts.com/c/e4397c6cf12af9f58d46e124d18d6d93?family=Mabry+Pro);
+
+body{
+  background-color: #F4F4F0;
+  font-family: Mabry Pro,sans-serif;
+}
+
+.btn-add {
+  display: block;
+  text-align: center;
+  transition: ease all 0.3s;
+  position: fixed;
+  right: 50px;
+  bottom: 40px;
+  z-index: 99;
+  font-size: 24px;
+  font-weight: bold !important;
+}
+
+input, textarea{
+  border: 1px black solid  !important;
+}
+
+.card{
+  border: 1px black solid  !important;
+}
+.card-header{
+  border-bottom: 1px black solid  !important;
+  background-color: #ffff !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+.card-body p{
+  font-weight: 200 !important;
+}
+
+.modal-content{
+  background-color: #F4F4F0;
+}
+.modal-content .btn{
+  border: 1px black solid  !important;
+}
