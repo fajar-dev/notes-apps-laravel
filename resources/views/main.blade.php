@@ -36,7 +36,7 @@
                     </p>
                     <div class="btn-group w-100" role="group" aria-label="Basic example">
                       <button type="button" data-bs-toggle="modal" data-bs-target="#edit{{ $row->id }}" class="btn btn-light"><i class="bi bi-pencil"></i> Edit</button>
-                      <a href="/notes_delete/{{ $row->id }}" class="btn btn-secondary"><i class="bi bi-trash"></i> Hapus</a>
+                      <button type="button" id="/notes_delete/{{ $row->id }}" class="btn btn-secondary btn-del"><i class="bi bi-trash"></i> Hapus</button>
                     </div>
                   </div>
                 </div>
