@@ -24,7 +24,7 @@
 
               @foreach ($data as $row)
                   
-              <section class="col-md-4">
+              <section class="col-md-4 mt-3">
                 <div class="card">
                   <div class="card-header">
                     {{ $row->title }}
@@ -68,6 +68,10 @@
               </div>          
 
               @endforeach
+
+              <div class="col-12 mt-5">
+                {{ $data->links() }}
+              </div>
 
             </div>
           </div>

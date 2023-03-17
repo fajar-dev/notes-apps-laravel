@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class NotesController extends Controller
 {
     public function index(){
-        $data = Notes::all();
+        $data = Notes::paginate(6);
         return view('main', compact('data'));
     }
 
