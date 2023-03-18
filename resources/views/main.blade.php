@@ -7,10 +7,12 @@
           <div class="col-6 text-center py-5">
             <h1>Notes App</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
-            <div class="form-floating mt-5">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Search a Notes...</label>
-            </div>
+            <form action="/notes" method="GET">
+              <div class="form-floating mt-5">
+                <input type="search" name="search" class="form-control" id="floatingInput" value="{{ app('request')->input('search') }}" placeholder="Search a Notes...">
+                <label for="floatingInput">Search a Notes...</label>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -23,6 +25,12 @@
             <div class="row">
 
               @foreach ($data as $row)
+
+              {{-- <div class="col-12 text-center">
+                @if (is_null($data))
+                  <p>No notes found</p>
+                @endif
+              </div> --}}
                   
               <section class="col-md-4 mt-3">
                 <div class="card">

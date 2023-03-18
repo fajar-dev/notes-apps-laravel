@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class NotesController extends Controller
 {
-    public function index(){
-        $data = Notes::paginate(6);
+    public function index(Request $request){
+        if($request->has('search')){
+            $data = Notes::where('title','LIKE','%'.$request->search. '%')->paginate(6);
+        }else{
+            $data = Notes::paginate(6);
+        }
+        // dd($data);
         return view('main', compact('data'));
     }
 
