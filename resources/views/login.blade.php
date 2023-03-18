@@ -11,6 +11,7 @@
             <div class="card">
               <div class="card-body py-4 px-4">
                 <form action="/login_action" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <h3 class="fw-bold mb-0 fs-2 mb-2">Sign In</h3>
                   <p class="mb-4">Sign in to member access</p>
                   <div class="form-floating mb-3">

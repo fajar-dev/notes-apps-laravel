@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -18,14 +19,11 @@ class AuthController extends Controller
     }
 
     public function login_action(Request $request ){
-
-            $register = new User;
-            $register->name  = $request->name;
-            $register->email  = $request->email;
-            $register->password  = bcrypt($request->password);
-            $register->remember_token  = Str::random(60);
-            $register->save();
-            return redirect()->route('login')->with('success','Registration is successful, please login');
+        if(Auth::attempt($request->only('email', 'password'))){
+            return redirect()->route('notes');
+        }else{
+            return redirect()->route('login')->with('success','Login failed, please try again');
+        }
     }
 
     public function register(){
