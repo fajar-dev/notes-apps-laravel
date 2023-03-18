@@ -21,5 +21,7 @@ Route::post('/notes_update', [NotesController::class, 'notes_update']);
 Route::get('/notes_delete/{id}', [NotesController::class, 'notes_delete']);
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+
 
 

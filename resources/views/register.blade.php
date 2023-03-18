@@ -11,8 +11,12 @@
             <div class="card">
               <div class="card-body py-4 px-4">
                 <form class="">
-                  <h3 class="fw-bold mb-0 fs-2 mb-2">Sign In</h3>
-                  <p class="mb-4">Sign in to member access</p>
+                  <h3 class="fw-bold mb-0 fs-2 mb-2">Sign Up</h3>
+                  <p class="mb-4">Sign up for member access</p>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Name</label>
+                  </div>
                   <div class="form-floating mb-3">
                     <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Email address</label>
@@ -21,15 +25,15 @@
                     <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                   </div>
-                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" >Sign In</button>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" >Sign Up</button>
                   <div class="text-center">
-                    <small class="text-muted text-center">don't have an account? <a href="/register">Sign Up</a></small>
+                    <small class="text-muted text-center">have an account? <a href="/login">Sign In</a></small>
                   </div>
                   <hr class="my-4">
                   <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
                   <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
                     <i class="bi bi-google"></i>
-                    Sign in with Google
+                    Sign up with Google
                   </button>
 
                 </form>

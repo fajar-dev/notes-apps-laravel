@@ -13,4 +13,12 @@ class AuthController extends Controller
         ];
         return view('login',  compact('value'));
     }
+
+    public function register(){
+        $value = [
+            'route' => 'Register',
+            'description' => 'This is the about page.',
+        ];
+        return view('register',  compact('value'));
+    }
 }
