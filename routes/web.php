@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
 
 /*
@@ -18,5 +19,7 @@ Route::get('/notes', [NotesController::class, 'index'])->name('notes');
 Route::post('/notes_add', [NotesController::class, 'notes_add']);
 Route::post('/notes_update', [NotesController::class, 'notes_update']);
 Route::get('/notes_delete/{id}', [NotesController::class, 'notes_delete']);
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 

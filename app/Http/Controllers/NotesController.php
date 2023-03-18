@@ -12,9 +12,12 @@ class NotesController extends Controller
             $data = Notes::where('title','LIKE','%'.$request->search. '%')->paginate(6);
         }else{
             $data = Notes::paginate(6);
-        }
-        // dd($data);
-        return view('main', compact('data'));
+        };
+        $value = [
+            'route' => 'Notes',
+            'description' => 'This is the about page.',
+        ];
+        return view('main', compact('data'), compact('value'));
     }
 
     public function notes_add(Request $request){

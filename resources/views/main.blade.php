@@ -1,23 +1,6 @@
 @extends('include/template')
 @section('content')
 
-<header>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-6 text-center py-5">
-            <h1>Notes App</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
-            <form action="/notes" method="GET">
-              <div class="form-floating mt-5">
-                <input type="search" name="search" class="form-control" id="floatingInput" value="{{ app('request')->input('search') }}" placeholder="Search a Notes...">
-                <label for="floatingInput">Search a Notes...</label>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main>
       <div class="container">
         <div class="row">

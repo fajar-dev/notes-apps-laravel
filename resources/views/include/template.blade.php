@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>{{ $value['route'] }}</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -12,8 +12,36 @@
       integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4="
       crossorigin="anonymous">
     </script>
+
+    <style>
+      .pagination .active{
+        background-color: black !important; 
+      }
+    </style>
+
   </head>
   <body>
+
+    <header>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6 text-center py-5">
+            <h1>Notes App</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
+
+            @if ($value['route'] == 'Notes')
+            <form action="/notes" method="GET">
+              <div class="form-floating mt-5">
+                <input type="search" name="search" class="form-control" id="floatingInput" value="{{ app('request')->input('search') }}" placeholder="Search a Notes...">
+                <label for="floatingInput">Search a Notes...</label>
+              </div>
+            </form>
+            @endif
+
+          </div>
+        </div>
+      </div>
+    </header>
 
   @yield('content')
 
