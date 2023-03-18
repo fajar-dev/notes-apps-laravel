@@ -22,12 +22,14 @@
   </head>
   <body>
 
+    @if ($value['route'] != 'Profile')
     <header>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-6 text-center py-5">
+          <div class="col-lg-6 col-12 text-center py-5">
             <h1>Notes App</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
+            
             @if ($value['route'] == 'Notes')
             <div class="d-flex justify-content-center align-items-center">
               <img src="img/1.png" width="50" class="border border-3 border-dark rounded-pill" height="50" alt="avatar">
@@ -36,7 +38,7 @@
                   {{Auth::user()->name}}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="/profile">Profile</a></li>
                   <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
                 </ul>
               </div>
@@ -53,6 +55,8 @@
         </div>
       </div>
     </header>
+    @endif
+
 
   @yield('content')
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::get('/', [NotesController::class, 'index'])->name('notes')->middleware('a
 Route::post('/notes_add', [NotesController::class, 'notes_add'])->middleware('auth');
 Route::post('/notes_update', [NotesController::class, 'notes_update'])->middleware('auth');
 Route::get('/notes_delete/{id}', [NotesController::class, 'notes_delete'])->middleware('auth');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('Profile')->middleware('auth');
+
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login_action', [AuthController::class, 'login_action'])->middleware('guest');
