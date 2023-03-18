@@ -28,9 +28,20 @@
           <div class="col-6 text-center py-5">
             <h1>Notes App</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, molestias facilis. Ex iste sapiente quidem, </p>
-
             @if ($value['route'] == 'Notes')
-            <form action="/notes" method="GET">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="img/1.png" width="50" class="border border-3 border-dark rounded-pill" height="50" alt="avatar">
+              <div class="dropdown">
+                <a class=" dropdown-toggle ms-3 text-dark fw-semibold" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{Auth::user()->name}}
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
+                </ul>
+              </div>
+            </div>
+            <form action="" method="GET">
               <div class="form-floating mt-5">
                 <input type="search" name="search" class="form-control" id="floatingInput" value="{{ app('request')->input('search') }}" placeholder="Search a Notes...">
                 <label for="floatingInput">Search a Notes...</label>
