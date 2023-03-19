@@ -32,16 +32,24 @@ class NotesController extends Controller
 
     public function notes_update(Request $request){
         $notes = Notes::find($request->id);
-        $notes->title  = $request->judul;
-        $notes->content  = $request->isi;
-        $notes->save();
-
+        if($notes->uid !== Auth::user()->id){
+            return redirect()->route('notes')->with('success','Failed, Please try again');
+        }else{
+            $notes->title  = $request->judul;
+            $notes->content  = $request->isi;
+            $notes->save();
+        }
         return redirect()->route('notes')->with('success','Notes have been updated');
     }
 
     public function notes_delete($id){
         $notes = Notes::find($id);
-        $notes->delete();
+        if($notes->uid !== Auth::user()->id){
+            return redirect()->route('notes')->with('success','Failed, Please try again');
+        }else{
+            $notes->delete();
+        }
+        // dd($notes);
         return redirect()->route('notes')->with('success','Notes have been deleted');
     }
 }

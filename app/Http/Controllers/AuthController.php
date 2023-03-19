@@ -22,7 +22,7 @@ class AuthController extends Controller
         if(Auth::attempt($request->only('email', 'password'))){
             return redirect()->route('notes');
         }else{
-            return redirect()->route('login')->with('success','Login failed, please try again');
+            return redirect()->route('login')->with('success','username or password is incorrect, please try again');
         }
     }
 

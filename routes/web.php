@@ -21,7 +21,10 @@ Route::post('/notes_add', [NotesController::class, 'notes_add'])->middleware('au
 Route::post('/notes_update', [NotesController::class, 'notes_update'])->middleware('auth');
 Route::get('/notes_delete/{id}', [NotesController::class, 'notes_delete'])->middleware('auth');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('Profile')->middleware('auth');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::post('/profile_update', [ProfileController::class, 'profile_update'])->middleware('auth');
+Route::post('/profile_delete', [ProfileController::class, 'profile_delete'])->middleware('auth');
+
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
@@ -30,7 +33,7 @@ Route::post('/login_action', [AuthController::class, 'login_action'])->middlewar
 Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register_action', [AuthController::class, 'register_action'])->middleware('guest');
 
-Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 
 
