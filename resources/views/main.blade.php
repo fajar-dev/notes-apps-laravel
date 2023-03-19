@@ -41,11 +41,11 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ $row->id }}">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control" id="floatingInput" name="judul" value="{{ $row->title }}" placeholder="name@example.com">
+                          <input type="text" class="form-control" id="floatingInput" name="judul" value="{{ $row->title }}" placeholder="name@example.com" required>
                           <label for="floatingInput">Title</label>
                         </div>
                         <div class="form-floating mb-3">
-                          <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px">{{ $row->content }}</textarea>
+                          <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px" required>{{ $row->content }}</textarea>
                           <label for="floatingTextarea2">Content</label>
                         </div>
                         <div class="text-center mt-3">
@@ -79,11 +79,11 @@
             <form action="/notes_add" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="judul" placeholder="name@example.com">
+                <input type="text" class="form-control" id="floatingInput" name="judul" placeholder="name@example.com" required>
                 <label for="floatingInput">Title</label>
               </div>
               <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" name="isi" id="floatingTextarea2" style="height: 200px" required></textarea>
                 <label for="floatingTextarea2">Content</label>
               </div>
               <div class="text-center mt-3">
