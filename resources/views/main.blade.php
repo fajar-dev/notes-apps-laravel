@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="row">
+            <div class="row justify-content-center">
 
               @foreach ($data as $row)
 

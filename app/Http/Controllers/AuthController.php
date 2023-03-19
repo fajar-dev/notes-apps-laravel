@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -35,11 +34,8 @@ class AuthController extends Controller
     }
 
     public function register_action(Request $request ){
-        // $cek = DB::table('users')->where('email', $request->email)->get();
-        // // dd($cek);
-        // if(empty($cek)){
-        //     return redirect()->route('register')->with('success','Registration is failed, please login');
-        // }else{
+        $cek = User::where('email', $request->email)->first();
+        if($cek == null){
             $register = new User;
             $register->name  = $request->name;
             $register->email  = $request->email;
@@ -47,7 +43,9 @@ class AuthController extends Controller
             $register->remember_token  = Str::random(60);
             $register->save();
             return redirect()->route('login')->with('success','Registration is successful, please login');
-        // }
+        }else{
+            return redirect()->route('register')->with('success','Registration failed, email is registered');
+        }
     }
 
     public function logout(){
