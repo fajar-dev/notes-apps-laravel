@@ -15,7 +15,7 @@
                 @endif
               </div> --}}
                   
-              <section class="col-md-4 mt-3">
+              <section class="col-lg-4 col-md-6 mt-3">
                 <div class="card">
                   <div class="card-header">
                     {{ $row->title }}

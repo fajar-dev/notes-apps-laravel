@@ -27,7 +27,6 @@ class NotesController extends Controller
         $notes->title  = $request->judul;
         $notes->content  = $request->isi;
         $notes->save();
-
         return redirect()->route('notes')->with('success','Notes have been added');
     }
 
