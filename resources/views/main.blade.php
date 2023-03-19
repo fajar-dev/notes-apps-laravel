@@ -21,7 +21,7 @@
                     {{ $row->title }}
                   </div>
                   <div class="card-body">
-                    <small class="text-muted pb-5">{{ date('d F Y', strtotime($row->created_add))}}</small>
+                    <small class="text-muted pb-5">{{  date('d F Y', strtotime($row->created_at))}}</small>
                     <p class="py-3">                    
                       {{ $row->content }}
                     </p>
