@@ -16,6 +16,10 @@
                     <img src="img/1.png" width="150" class="border border-3 border-dark rounded-pill mb-4" height="150" alt="avatar">
                   </div>
                   <h2 class="fs-5 fw-bold mb-3">Account Profile</h2>
+                  <div class=" mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control form-control-lg" type="file" id="formFile">
+                  </div>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control rounded-3" value="{{Auth::user()->name}}" id="floatingInput" name="name" required>
                     <label for="floatingInput">Name</label>
@@ -27,14 +31,15 @@
                   <button class="mb-2 btn rounded-3 btn-dark" type="submit" >Save</button>
                 </form>
                   <hr class="my-3">
-                <form class="">
+                <form action="/password_change" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <h2 class="fs-5 fw-bold mb-3">change Password</h2>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control rounded-3" name="password_old" id="floatingPassword" placeholder="Password" required>
                     <label for="floatingPassword">Password</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control rounded-3" name="password_new" id="floatingPassword" placeholder="Password" required>
                     <label for="floatingPassword">New Password</label>
                   </div>
                   <div class="form-floating mb-3">

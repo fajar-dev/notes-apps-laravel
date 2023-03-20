@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -39,7 +40,7 @@ class AuthController extends Controller
             $register = new User;
             $register->name  = $request->name;
             $register->email  = $request->email;
-            $register->password  = bcrypt($request->password);
+            $register->password  = Hash::make($request->password);
             $register->remember_token  = Str::random(60);
             $register->save();
             return redirect()->route('login')->with('success','Registration is successful, please login');

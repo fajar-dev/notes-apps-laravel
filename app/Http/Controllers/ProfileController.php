@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -28,5 +29,17 @@ class ProfileController extends Controller
         $profile = User::find(Auth::user()->id);
         $profile->delete();
         return redirect()->route('logout');
+    }
+
+    public function password_change(Request $request){
+        // dd(Hash::check($request->old_password, auth()->user()->password));
+        if(!Hash::check($request->password_old, auth()->user()->password) ){
+            return redirect()->route('profile')->with('success',"Old Password Doesn't match!");
+        }else{
+            $profile = User::find(Auth::user()->id);
+            $profile->password  = Hash::make($request->password_new);
+            $profile->save();
+            return redirect()->route('logout');
+        }
     }
 }

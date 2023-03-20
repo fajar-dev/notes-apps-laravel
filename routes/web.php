@@ -24,8 +24,7 @@ Route::get('/notes_delete/{id}', [NotesController::class, 'notes_delete'])->midd
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::post('/profile_update', [ProfileController::class, 'profile_update'])->middleware('auth');
 Route::post('/profile_delete', [ProfileController::class, 'profile_delete'])->middleware('auth');
-
-
+Route::post('/password_change', [ProfileController::class, 'password_change'])->middleware('auth');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login_action', [AuthController::class, 'login_action'])->middleware('guest');
