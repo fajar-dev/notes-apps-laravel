@@ -18,10 +18,20 @@ class ProfileController extends Controller
     }
 
     public function profile_update(Request $request){
-        $profile = User::find(Auth::user()->id);
-        $profile->name  = $request->name;
-        $profile->email  = $request->email;
-        $profile->save();
+        if(empty($request->image)){
+            $profile = User::find(Auth::user()->id);
+            $profile->name  = $request->name;
+            $profile->email  = $request->email;
+            $profile->save();
+        }else{
+            $image_path = $request->file('image')->store('image', 'public');
+            $profile = User::find(Auth::user()->id);
+            $profile->name  = $request->name;
+            $profile->email  = $request->email;
+            $profile->photo  = $image_path;
+            $profile->save();
+        }
+        
         return redirect()->route('profile')->with('success','Your profile have been updated');
     }
 

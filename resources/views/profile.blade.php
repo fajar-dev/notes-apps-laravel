@@ -12,13 +12,13 @@
 
                 <form method="POST" enctype="multipart/form-data" action="/profile_update">
                   @csrf
-                  <div class="text-center">
-                    <img src="img/1.png" width="150" class="border border-3 border-dark rounded-pill mb-4" height="150" alt="avatar">
+                  <div class="text-center d-flex justify-content-center">
+                    <img src="{{Storage::url(Auth::user()->photo)}}" width="150" id="preview" class="border border-3 border-dark rounded-pill mb-4 text-center" height="150" alt="avatar">
                   </div>
                   <h2 class="fs-5 fw-bold mb-3">Account Profile</h2>
                   <div class=" mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
-                    <input class="form-control form-control-lg" type="file" id="formFile">
+                    <label for="formFile" class="form-label">Change Image</label>
+                    <input class="form-control form-control-lg" type="file" id="formFile" accept="image/*" onchange="showPreview(event);" name="image">
                   </div>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control rounded-3" value="{{Auth::user()->name}}" id="floatingInput" name="name" required>
