@@ -49,6 +49,22 @@ class AuthController extends Controller
         }
     }
 
+    public function forgot(){
+        $value = [
+            'route' => 'Forgot',
+            'description' => 'This is the about page.',
+        ];
+        return view('forgot',  compact('value'));
+    }
+
+    public function reset(){
+        $value = [
+            'route' => 'Reset',
+            'description' => 'This is the about page.',
+        ];
+        return view('reset',  compact('value'));
+    }
+
     public function logout(){
         Auth::logout();
         return redirect()->route('login');

@@ -32,6 +32,11 @@ Route::post('/login_action', [AuthController::class, 'login_action'])->middlewar
 Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register_action', [AuthController::class, 'register_action'])->middleware('guest');
 
+Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot')->middleware('guest');
+
+Route::get('/reset', [AuthController::class, 'reset'])->name('reset')->middleware('guest');
+
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 

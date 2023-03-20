@@ -26,6 +26,12 @@
                     <input type="password" class="form-control rounded-3" id="floatingPassword" name="password" placeholder="Password" required>
                     <label for="floatingPassword">Password</label>
                   </div>
+                  <div  class="my-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="accountActivation" id="accountActivation" required>
+                      <label class="form-check-label" for="accountActivation"><small>I agree with the Terms and Privacy Policy</small> </label>
+                    </div>
+                  </div>
                   <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" >Sign Up</button>
                   <div class="text-center">
                     <small class="text-muted text-center">have an account? <a href="/login">Sign In</a></small>

@@ -34,7 +34,7 @@
             <div class="d-flex justify-content-center align-items-center">
               <img src="img/1.png" width="50" class="border border-3 border-dark rounded-pill" height="50" alt="avatar">
               <div class="dropdown">
-                <a class=" dropdown-toggle ms-3 text-dark fw-semibold" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class=" dropdown-toggle ms-3 text-dark fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{Auth::user()->name}}
                 </a>
                 <ul class="dropdown-menu">

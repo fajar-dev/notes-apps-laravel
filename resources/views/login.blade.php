@@ -22,6 +22,13 @@
                     <input type="password" class="form-control rounded-3" id="floatingPassword" name="password" placeholder="Password" required>
                     <label for="floatingPassword">Password</label>
                   </div>
+                  <div  class="d-flex justify-content-between my-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="accountActivation" id="accountActivation">
+                      <label class="form-check-label" for="accountActivation"><small>Remember Me</small> </label>
+                    </div>
+                    <a href="/forgot"><small>Forgot Password ?</small></a>
+                  </div>
                   <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" >Sign In</button>
                   <div class="text-center">
                     <small class="text-muted text-center">don't have an account? <a href="/register">Sign Up</a></small>

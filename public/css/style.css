@@ -5,6 +5,10 @@ body{
   font-family: Mabry Pro,sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
 .btn-add {
   display: block;
   text-align: center;
