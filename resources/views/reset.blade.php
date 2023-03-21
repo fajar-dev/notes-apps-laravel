@@ -11,6 +11,7 @@
             <div class="card">
               <div class="card-body py-4 px-4">
                 <form action="/reset_action" method="POST" enctype="multipart/form-data">
+                  <input type="hidden" name="token" value="{{ Request::segment(2) }}">
                   @csrf
                   <h3 class="fw-bold mb-0 fs-2 mb-2">Reset Password</h3>
                   <p class="mb-4">Change your password</p>

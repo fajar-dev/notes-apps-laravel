@@ -33,8 +33,11 @@ Route::get('/register', [AuthController::class, 'register'])->name('register')->
 Route::post('/register_action', [AuthController::class, 'register_action'])->middleware('guest');
 
 Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot')->middleware('guest');
+Route::post('/forgot_action', [AuthController::class, 'forgot_action'])->middleware('guest');
 
-Route::get('/reset', [AuthController::class, 'reset'])->name('reset')->middleware('guest');
+
+Route::get('/reset/{token}', [AuthController::class, 'reset'])->middleware('guest');
+Route::post('/reset_action', [AuthController::class, 'reset_action'])->middleware('guest');
 
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
